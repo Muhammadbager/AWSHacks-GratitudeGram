@@ -12,7 +12,8 @@ art.
 
 ## Team
 
-- _(Add your name here)_
+- Muhammadbager Al-Ali
+- Tri Vo
 
 ## Track
 
