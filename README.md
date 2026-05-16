@@ -13,7 +13,7 @@ art.
 ## Team
 
 - Muhammadbager Al-Ali
-- Tri Vo
+- Tri Vooo
 
 ## Track
 
