@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GratitudeGram — Say thank you, beautifully.</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>GratitudeGram</h1>
+        <p class="tagline">
+          Say thank you, beautifully. Tell us about someone who shaped your
+          life and we'll craft a card you can actually send.
+        </p>
+      </header>
+
+      <section class="card form-card">
+        <form id="gratitude-form">
+          <div class="row">
+            <label>
+              Your first name
+              <input
+                type="text"
+                name="author_name"
+                placeholder="Alex"
+                autocomplete="off"
+              />
+            </label>
+            <label>
+              Who are you thanking?
+              <input
+                type="text"
+                name="recipient_name"
+                placeholder="Mom"
+                required
+                autocomplete="off"
+              />
+            </label>
+          </div>
+
+          <label>
+            Your relationship to them
+            <input
+              type="text"
+              name="relationship"
+              placeholder="My mother, my CS professor, my soccer coach…"
+              required
+              autocomplete="off"
+            />
+          </label>
+
+          <label>
+            What did they do that you're grateful for?
+            <textarea
+              name="why"
+              rows="3"
+              placeholder="She worked two jobs to put me through college and never let me see her tired."
+              required
+            ></textarea>
+          </label>
+
+          <label>
+            A few specific memories or qualities (the more concrete, the better)
+            <textarea
+              name="memories"
+              rows="4"
+              placeholder="• The way she'd leave handwritten notes in my lunchbox&#10;• Teaching me to ride a bike in the rain&#10;• Her laugh when I burned the pancakes"
+              required
+            ></textarea>
+          </label>
+
+          <label>
+            Tone
+            <select name="tone">
+              <option value="heartfelt">Heartfelt</option>
+              <option value="funny">Warm and funny</option>
+              <option value="formal">Formal and respectful</option>
+            </select>
+          </label>
+
+          <div class="actions">
+            <button type="submit" id="submit-btn">Generate my card</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="result" class="hidden">
+        <div class="card result-card">
+          <div class="card-image-wrap">
+            <img id="card-image" alt="Card illustration" />
+            <div id="image-loading" class="loading-overlay hidden">
+              Painting your card…
+            </div>
+          </div>
+          <div class="letter-wrap">
+            <pre id="letter-text"></pre>
+            <div class="result-actions">
+              <button id="regenerate-btn" type="button">Regenerate</button>
+              <button id="print-btn" type="button">Print / Save PDF</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="error" class="hidden">
+        <div class="card error-card">
+          <strong>Something went wrong.</strong>
+          <p id="error-text"></p>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          Built with Amazon Bedrock · Claude Sonnet 4.5 for the words ·
+          Stable Image Core for the art.
+        </p>
+      </footer>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
